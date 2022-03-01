@@ -93,6 +93,7 @@ print(steve.entry_salary(35))  # 50000
 
 
 # Recap:
+
 # 1. Class attributes are shared by all instances of the class
 # 2. Special "Dunder" methods are used to override the default behavior of the object
 # 3. @staticmethod is used to define a method that is not associated with any instance of the class
