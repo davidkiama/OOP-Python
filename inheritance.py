@@ -20,7 +20,7 @@ class Employee:
         print(self.name, "is working...")
 
 
-class Desginer(Employee):
+class Designer(Employee):
     '''
     This is the child class or the derived class
     '''
@@ -55,17 +55,17 @@ class SoftwareEngineer(Employee):
 
 # INHERITANCE
 # 1. Inheritance of attributes
-de1 = Desginer('John', 50000)
+de1 = Designer('John', 50000)
 se1 = SoftwareEngineer('Mary', 60000, 'Senior')
 # print(de1)  # John earns 50000.(__str__)
 
 # 2. Inheritance of methods
-# de1.work()  # John is working...
+# de1.work()  # John is working as a designer...
 # se1.work()  # Mary is working...
 
 # Extending the parent class.
 # 1. Entending  of properties
-print(se1.level)  # Senior. This property is only availabe in the child class.
+# print(se1.level)  # Senior. This property is only availabe in the child class.
 
 # 2. Extending of methods
 # de1.draw()  # John is drawing...
@@ -77,4 +77,41 @@ print(se1.level)  # Senior. This property is only availabe in the child class.
 # If we use the same name for the child method, it will override the parent method.
 # This is called method overriding.
 # If we use diferrent name for the child method, we are extending the child class.
-se1.work()  # Mary who is a Senior engineer is working...
+# se1.work()  # Mary who is a Senior engineer is working...
+
+
+# POLYMORPHISM
+# Polymorphism is the ability of an object to take on many forms.
+# For example, an employee can be a be coding or designing.
+
+# List of employees
+employees = [
+    Designer('John', 50000),
+    Designer('James', 60000),
+    SoftwareEngineer('Mary', 60000, 'Senior'),
+    SoftwareEngineer('Steve', 70000, 'Junior'),
+    SoftwareEngineer('Bill', 80000, 'Senior'),
+]
+
+
+def motivate_emloyees(employess):
+    for employee in employees:
+        employee.work()
+
+
+motivate_emloyees(employees)
+'''
+    OUTPUT:
+        John is working as a designer...
+        James is working as a designer...
+        Mary who is a Senior engineer is working...
+        Steve who is a Junior engineer is working...
+        Bill who is a Senior engineer is working...
+
+'''
+
+# Recap:
+# 1. Inheritance ChildClass(ParentClass)
+# call the super().__init__() method to call the parent class constructor.
+# 2  Inheritance, Extending and Overwriting
+# 3. Polymorphism
